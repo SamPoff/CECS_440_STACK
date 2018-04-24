@@ -1,0 +1,43 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU_tb_isim_beh.exe -prj C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU_tb_beh.prj work.STACK_CPU_tb work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/Users/Sam/Desktop/440/Stack_CPU/STACK.v" into library work
+Analyzing Verilog file "C:/Users/Sam/Desktop/440/Stack_CPU/PROGRAM_COUNTER.v" into library work
+Analyzing Verilog file "C:/Users/Sam/Desktop/440/Stack_CPU/INSTRUCTION_MEM_128x16.v" into library work
+Analyzing Verilog file "C:/Users/Sam/Desktop/440/Stack_CPU/CONTROL_UNIT.v" into library work
+WARNING:HDLCompiler:751 - "C:/Users/Sam/Desktop/440/Stack_CPU/CONTROL_UNIT.v" Line 24: Redeclaration of ansi port push is not allowed
+WARNING:HDLCompiler:751 - "C:/Users/Sam/Desktop/440/Stack_CPU/CONTROL_UNIT.v" Line 25: Redeclaration of ansi port pop is not allowed
+WARNING:HDLCompiler:751 - "C:/Users/Sam/Desktop/440/Stack_CPU/CONTROL_UNIT.v" Line 26: Redeclaration of ansi port alu_op is not allowed
+WARNING:HDLCompiler:98 - "C:/Users/Sam/Desktop/440/Stack_CPU/CONTROL_UNIT.v" Line 26: alu_op was previously declared with a range
+Analyzing Verilog file "C:/Users/Sam/Desktop/440/Stack_CPU/ALU.v" into library work
+WARNING:HDLCompiler:751 - "C:/Users/Sam/Desktop/440/Stack_CPU/ALU.v" Line 21: Redeclaration of ansi port hold is not allowed
+WARNING:HDLCompiler:751 - "C:/Users/Sam/Desktop/440/Stack_CPU/ALU.v" Line 23: Redeclaration of ansi port pop is not allowed
+WARNING:HDLCompiler:568 - "C:/Users/Sam/Desktop/440/Stack_CPU/ALU.v" Line 41: Constant value is truncated to fit in <3> bits.
+WARNING:HDLCompiler:568 - "C:/Users/Sam/Desktop/440/Stack_CPU/ALU.v" Line 42: Constant value is truncated to fit in <3> bits.
+Analyzing Verilog file "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.v" into library work
+Analyzing Verilog file "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU_tb.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:1016 - "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.v" Line 50: Port enable is not connected to this instance
+WARNING:HDLCompiler:189 - "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.v" Line 35: Size mismatch in connection of port <pc_out>. Formal port size is 32-bit while actual signal size is 8-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.v" Line 47: Size mismatch in connection of port <alu_op>. Formal port size is 1-bit while actual signal size is 4-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.v" Line 55: Size mismatch in connection of port <data_in>. Formal port size is 32-bit while actual signal size is 16-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.v" Line 56: Size mismatch in connection of port <data_out>. Formal port size is 32-bit while actual signal size is 16-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.v" Line 60: Size mismatch in connection of port <data_in>. Formal port size is 32-bit while actual signal size is 16-bit.
+WARNING:HDLCompiler:189 - "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.v" Line 65: Size mismatch in connection of port <result>. Formal port size is 32-bit while actual signal size is 1-bit.
+Completed static elaboration
+Compiling module PROGRAM_COUNTER
+Compiling module INSTRUCTION_MEM_128x16
+Compiling module CONTROL_UNIT
+Compiling module STACK
+Compiling module ALU
+Compiling module STACK_CPU
+Compiling module STACK_CPU_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Compiled 8 Verilog Units
+Built simulation executable C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU_tb_isim_beh.exe
+Fuse Memory Usage: 27952 KB
+Fuse CPU Usage: 1546 ms

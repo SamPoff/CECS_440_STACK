@@ -1,0 +1,2 @@
+ISim log file
+Running: C:\Users\Sam\Desktop\440\Stack_CPU\STACK_CPU_tb_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU_tb_isim_beh.wdb 

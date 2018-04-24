@@ -1,0 +1,6 @@
+verilog work "STACK.v"
+verilog work "PROGRAM_COUNTER.v"
+verilog work "INSTRUCTION_MEM_128x16.v"
+verilog work "CONTROL_UNIT.v"
+verilog work "ALU.v"
+verilog work "STACK_CPU.v"

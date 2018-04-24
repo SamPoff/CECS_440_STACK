@@ -1,0 +1,8 @@
+verilog isim_temp "STACK.v"
+verilog isim_temp "PROGRAM_COUNTER.v"
+verilog isim_temp "INSTRUCTION_MEM_128x16.v"
+verilog isim_temp "CONTROL_UNIT.v"
+verilog isim_temp "ALU.v"
+verilog isim_temp "STACK_CPU.v"
+verilog isim_temp "STACK_CPU_tb.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

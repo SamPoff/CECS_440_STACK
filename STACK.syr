@@ -1,0 +1,396 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.36 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.36 secs
+ 
+--> Reading design: STACK.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "STACK.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "STACK"
+Output Format                      : NGC
+Target Device                      : xc6slx16-2-csg324
+
+---- Source Options
+Top Module Name                    : STACK
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\Sam\Desktop\440\Stack_CPU\STACK.v" into library work
+Parsing module <STACK>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <STACK>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <STACK>.
+    Related source file is "C:\Users\Sam\Desktop\440\Stack_CPU\STACK.v".
+    Found 4-bit register for signal <stack_pointer>.
+    Found 512-bit register for signal <n0031[511:0]>.
+    Found 4-bit subtractor for signal <stack_pointer[3]_GND_1_o_sub_23_OUT> created at line 51.
+    Found 4-bit adder for signal <stack_pointer[3]_GND_1_o_add_21_OUT> created at line 45.
+    Found 32-bit 16-to-1 multiplexer for signal <GND_1_o_stack[15][31]_wide_mux_2_OUT> created at line 19.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred 516 D-type flip-flop(s).
+	inferred  18 Multiplexer(s).
+Unit <STACK> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 4-bit addsub                                          : 1
+ 4-bit subtractor                                      : 1
+# Registers                                            : 2
+ 4-bit register                                        : 1
+ 512-bit register                                      : 1
+# Multiplexers                                         : 18
+ 32-bit 16-to-1 multiplexer                            : 1
+ 32-bit 2-to-1 multiplexer                             : 17
+
+=========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <STACK>.
+The following registers are absorbed into counter <stack_pointer>: 1 register on signal <stack_pointer>.
+Unit <STACK> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 4-bit subtractor                                      : 1
+# Counters                                             : 1
+ 4-bit updown counter                                  : 1
+# Registers                                            : 512
+ Flip-Flops                                            : 512
+# Multiplexers                                         : 545
+ 1-bit 16-to-1 multiplexer                             : 32
+ 1-bit 2-to-1 multiplexer                              : 512
+ 32-bit 2-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <STACK> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block STACK, actual ratio is 12.
+FlipFlop stack_pointer_0 has been replicated 37 time(s)
+FlipFlop stack_pointer_1 has been replicated 35 time(s)
+FlipFlop stack_pointer_2 has been replicated 37 time(s)
+FlipFlop stack_pointer_3 has been replicated 36 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 661
+ Flip-Flops                                            : 661
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : STACK.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 776
+#      INV                         : 1
+#      LUT2                        : 2
+#      LUT3                        : 2
+#      LUT4                        : 2
+#      LUT5                        : 33
+#      LUT6                        : 640
+#      MUXF7                       : 64
+#      MUXF8                       : 32
+# FlipFlops/Latches                : 661
+#      FDCE                        : 661
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 67
+#      IBUF                        : 35
+#      OBUF                        : 32
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             661  out of  18224     3%  
+ Number of Slice LUTs:                  680  out of   9112     7%  
+    Number used as Logic:               680  out of   9112     7%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    753
+   Number with an unused Flip Flop:      92  out of    753    12%  
+   Number with an unused LUT:            73  out of    753     9%  
+   Number of fully used LUT-FF pairs:   588  out of    753    78%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                          68
+ Number of bonded IOBs:                  68  out of    232    29%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clock                              | BUFGP                  | 661   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 3.154ns (Maximum Frequency: 317.022MHz)
+   Minimum input arrival time before clock: 6.807ns
+   Maximum output required time after clock: 11.446ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 3.154ns (frequency: 317.022MHz)
+  Total number of paths / destination ports: 2932 / 661
+-------------------------------------------------------------------------
+Delay:               3.154ns (Levels of Logic = 1)
+  Source:            stack_pointer_0_13 (FF)
+  Destination:       stack_pointer_0 (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: stack_pointer_0_13 to stack_pointer_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             1   0.525   0.681  stack_pointer_0_13 (stack_pointer_0_13)
+     INV:I->O             38   0.255   1.619  Result<0>1_INV_0 (Result<0>)
+     FDCE:D                    0.074          stack_pointer_0
+    ----------------------------------------
+    Total                      3.154ns (0.854ns logic, 2.300ns route)
+                                       (27.1% logic, 72.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
+  Total number of paths / destination ports: 2094 / 1945
+-------------------------------------------------------------------------
+Offset:              6.807ns (Levels of Logic = 2)
+  Source:            push (PAD)
+  Destination:       stack_pointer_0 (FF)
+  Destination Clock: clock rising
+
+  Data Path: push to stack_pointer_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O           516   1.328   2.569  push_IBUF (push_IBUF)
+     LUT2:I0->O          149   0.250   2.359  _n0065_inv1 (_n0065_inv)
+     FDCE:CE                   0.302          stack_pointer_0
+    ----------------------------------------
+    Total                      6.807ns (1.880ns logic, 4.927ns route)
+                                       (27.6% logic, 72.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
+  Total number of paths / destination ports: 1344 / 32
+-------------------------------------------------------------------------
+Offset:              11.446ns (Levels of Logic = 6)
+  Source:            stack_pointer_0 (FF)
+  Destination:       data_out<31> (PAD)
+  Source Clock:      clock rising
+
+  Data Path: stack_pointer_0 to data_out<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q           163   0.525   2.377  stack_pointer_0 (stack_pointer_0)
+     LUT2:I1->O          128   0.254   2.750  Msub_stack_pointer[3]_GND_1_o_sub_23_OUT_xor<1>11 (stack_pointer[3]_GND_1_o_sub_23_OUT<1>)
+     LUT6:I0->O            1   0.254   0.000  mux513_4 (mux513_4)
+     MUXF7:I1->O           1   0.175   0.000  mux513_3_f7 (mux513_3_f7)
+     MUXF8:I1->O           1   0.152   1.112  mux513_2_f8 (GND_1_o_stack[15][31]_wide_mux_2_OUT<10>)
+     LUT5:I0->O            1   0.254   0.681  Mmux_data_out210 (data_out_10_OBUF)
+     OBUF:I->O                 2.912          data_out_10_OBUF (data_out<10>)
+    ----------------------------------------
+    Total                     11.446ns (4.526ns logic, 6.920ns route)
+                                       (39.5% logic, 60.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clock
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |    3.154|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 21.00 secs
+Total CPU time to Xst completion: 21.23 secs
+ 
+--> 
+
+Total memory usage is 344744 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+
