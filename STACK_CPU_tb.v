@@ -4,7 +4,7 @@
 // Company: 
 // Engineer:
 //
-// Create Date:   11:34:33 04/24/2018
+// Create Date:   16:20:51 04/24/2018
 // Design Name:   STACK_CPU
 // Module Name:   C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU_tb.v
 // Project Name:  Stack_CPU
@@ -28,26 +28,24 @@ module STACK_CPU_tb;
 	reg clock;
 	reg reset;
 
-   //reg [31:0] IM [0:127];
-
 	// Instantiate the Unit Under Test (UUT)
 	STACK_CPU uut (
 		.clock(clock), 
 		.reset(reset)
 	);
-   
+
    always #5 clock = ~clock;
 
 	initial begin
 		// Initialize Inputs
 		clock = 0;
 		reset = 1;
-      uut.imem.IM[0] = 32'h0400_0000;
-      uut.imem.IM[1] = 32'h0800_0000;
+      uut.imem.IM[0] = 32'h0400_0022;
+      uut.imem.IM[1] = 32'h0400_0033;
       uut.imem.IM[2] = 32'h0C00_0000;
 
 		// Wait 100 ns for global reset to finish
-		#100;
+		#10;
       reset = 0;
         
 		// Add stimulus here

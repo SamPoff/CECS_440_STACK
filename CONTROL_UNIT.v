@@ -16,14 +16,12 @@ module CONTROL_UNIT(
    input        clock,
    input        reset,
    input  [5:0] opcode,
-   output       push,
-   output       pop,
-   output [3:0] alu_op
+   output reg   push,
+   output reg   pop,
+   output reg [3:0] alu_op
    );
    
-   reg push;
-   reg pop;
-   reg alu_op;
+
 
    always@( * ) begin
       case( opcode )

@@ -10,10 +10,15 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="9" />
-   <wvobject fp_name="/STACK_tb/data_out" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">data_out[31:0]</obj_property>
-      <obj_property name="ObjectShortName">data_out[31:0]</obj_property>
+   <WVObjectSize size="8" />
+   <wvobject fp_name="/STACK_tb/data_out_1st" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_out_1st[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out_1st[31:0]</obj_property>
+      <obj_property name="Radix">HEXRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/STACK_tb/data_out_2nd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">data_out_2nd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_out_2nd[31:0]</obj_property>
       <obj_property name="Radix">HEXRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/STACK_tb/clock" type="logic" db_ref_id="1">
@@ -31,14 +36,6 @@
    <wvobject fp_name="/STACK_tb/pop" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">pop</obj_property>
       <obj_property name="ObjectShortName">pop</obj_property>
-   </wvobject>
-   <wvobject fp_name="/STACK_tb/pop_alu" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">pop_alu</obj_property>
-      <obj_property name="ObjectShortName">pop_alu</obj_property>
-   </wvobject>
-   <wvobject fp_name="/STACK_tb/enable" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">enable</obj_property>
-      <obj_property name="ObjectShortName">enable</obj_property>
    </wvobject>
    <wvobject fp_name="/STACK_tb/data_in" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">data_in[31:0]</obj_property>

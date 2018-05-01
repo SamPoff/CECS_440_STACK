@@ -5,10 +5,9 @@ module STACK(
    input         reset,     // System reset. 
    input         push,      // Pushing onto stack signal.
    input         pop,       // Popping off of stack signal.
-   input         pop_alu,   // Pop signal from the ALU.
-   input         enable,    // Makes sure stack doesn't run away. 
    input  [31:0] data_in,   // Data to push on.
-   output [31:0] data_out   // Data popped off.
+   output [31:0] data_out_1st,  // Data from first read segment.
+   output [31:0] data_out_2nd   // Data from second read segment. 
    );
 
    // Keeps track of location in the stack. 
@@ -23,7 +22,8 @@ module STACK(
    the stack pointer since that location is
    empty and waiting to be written to. 
    ****************************************/
-   assign data_out = ( stack_pointer == 4'b0 ) ? 32'b0 : stack[ stack_pointer - 1 ];
+   assign data_out_1st = ( stack_pointer == 4'b0 ) ? 32'b0 : stack[ stack_pointer - 1 ];
+   assign data_out_2nd = ( stack_pointer <= 4'b1 ) ? 32'b0 : stack[ stack_pointer - 2 ];
    
    // Update the stack pointer and stack contents. 
    always@( posedge clock, posedge reset ) begin
@@ -43,7 +43,7 @@ module STACK(
          stack[14] <= 32'b0; stack[15] <= 32'b0;
          stack_pointer <= 4'b0;
       end
-      else if( ( push | pop | pop_alu ) & enable ) begin
+      else if( push | pop ) begin
          /***********************************************
          If push: increment the stack pointer and assign
          a value to the location pointed to on the stack. 
@@ -56,7 +56,7 @@ module STACK(
          If pop: decrement the stack pointer. No need to
          overwrite the existing data. 
          ***********************************************/
-         if( pop | pop_alu  ) begin
+         if( pop ) begin
             stack_pointer <= stack_pointer - 4'b1;
          end
       end

@@ -1,14 +1,1 @@
 xst -intstyle ise -ifn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.xst" -ofn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.syr" 
-xst -intstyle ise -ifn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.xst" -ofn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.syr" 
-xst -intstyle ise -ifn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.xst" -ofn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.syr" 
-xst -intstyle ise -ifn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.xst" -ofn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.syr" 
-xst -intstyle ise -ifn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.xst" -ofn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.syr" 
-xst -intstyle ise -ifn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.xst" -ofn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.syr" 
-xst -intstyle ise -ifn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.xst" -ofn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.syr" 
-xst -intstyle ise -ifn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.xst" -ofn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.syr" 
-xst -intstyle ise -ifn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.xst" -ofn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.syr" 
-xst -intstyle ise -ifn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.xst" -ofn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.syr" 
-xst -intstyle ise -ifn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.xst" -ofn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.syr" 
-xst -intstyle ise -ifn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.xst" -ofn "C:/Users/Sam/Desktop/440/Stack_CPU/STACK_CPU.syr" 
-ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-2 STACK_CPU.ngc STACK_CPU.ngd  
-map -intstyle ise -p xc6slx16-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o STACK_CPU_map.ncd STACK_CPU.ngd STACK_CPU.pcf 
