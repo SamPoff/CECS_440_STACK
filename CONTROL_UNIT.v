@@ -28,6 +28,7 @@ module CONTROL_UNIT(
          4'd1 : { push, pop, alu_op } = 7'b10_0000;
          4'd2 : { push, pop, alu_op } = 7'b01_0000;
          4'd3 : { push, pop, alu_op } = 7'b00_0011;
+         default : { push, pop, alu_op } = 7'b00_0000;
       endcase
    end
 

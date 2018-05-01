@@ -14,7 +14,7 @@ module ALU(
              SUB = 4'h5,
              SLT = 4'h6,
              NOR = 4'h7,
-             AND = 4'h8;
+             AND = 4'h8; 
    
    always@( * ) begin
       case( alu_op )
@@ -29,5 +29,6 @@ module ALU(
    end
 
    assign zero = ( result == 32'b0 ) ? 1'b1 : 1'b0;
+   assign pop  = ( result != 32'b0 );
 
 endmodule

@@ -21,21 +21,23 @@ module STACK_CPU(
    
    wire [3:0]  alu_op;
    wire [31:0] instruction_32;
-   wire [7:0]  pc_out;
+   //wire [7:0]  pc_out;
    wire [31:0] data_out_1st;
    wire [31:0] data_out_2nd;
    wire [31:0] result; 
    
    // Instantiate PC.
-   reg [31:0] pc_in;
+   reg [7:0] pc_out;
    always@( posedge clock, posedge reset ) begin
-      if( reset ) pc_in <= 32'b0; 
-      else        pc_in <= pc_in + 32'b1;
+      if( reset ) pc_out <= 32'b0; 
+      else        pc_out <= pc_out + 32'b1;
    end
+   /*
    PROGRAM_COUNTER pc( .clock( clock ),
                        .reset( reset ),
                        .pc_in( pc_in ),
                        .pc_out( pc_out ) );
+   */
    
    // Instantiate the instruction memory.
    INSTRUCTION_MEM_128x32 imem( .ReadAddress( pc_out ),
@@ -54,6 +56,8 @@ module STACK_CPU(
                 .reset( reset ),
                 .push( push ),
                 .pop( pop ),
+                .pop_alu( pop_alu ),
+                .result( result ),
                 .data_in( { 16'b0, instruction_32[15:0] } ),
                 .data_out_1st( data_out_1st ),
                 .data_out_2nd( data_out_2nd ) );

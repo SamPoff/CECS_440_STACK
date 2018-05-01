@@ -5,6 +5,8 @@ module STACK(
    input         reset,     // System reset. 
    input         push,      // Pushing onto stack signal.
    input         pop,       // Popping off of stack signal.
+   input         pop_alu,   // Signal from alu to pop.
+   input  [31:0] result,    // Result from alu.
    input  [31:0] data_in,   // Data to push on.
    output [31:0] data_out_1st,  // Data from first read segment.
    output [31:0] data_out_2nd   // Data from second read segment. 
@@ -59,6 +61,10 @@ module STACK(
          if( pop ) begin
             stack_pointer <= stack_pointer - 4'b1;
          end
+      end
+      else if( pop_alu ) begin
+         stack_pointer <= stack_pointer - 4'b1;
+         stack[ stack_pointer - 4'd2 ] <= result;
       end
       /***********************************************
       Else: keep the stack pointer where it is.
