@@ -1,17 +1,9 @@
 `timescale 1ns / 1ps
-/**********************************************************
-16 bit instrucions. 
-Opcode most signifigant 6 bits.
-PUSH = 32'h0400_0000
-POP  = 32'h0800_0000
-ADD  = 32'h0C00_0000
-OR   = 32'h1000_0000
-ADD  = 32'h1100_0000
-SUB  = 32'h1400_0000
-SLT  = 32'h1800_0000
-NOR  = 32'h1C00_0000
-IMM  = 32'hxxxx_xxxx
-**********************************************************/
+/******************************************************
+Takes in the opcade and generates a push / pop signal,
+also converts the op-code to an alu-op to be sent to 
+the ALU.
+******************************************************/
 module CONTROL_UNIT(
    input        clock,
    input        reset,
@@ -21,13 +13,16 @@ module CONTROL_UNIT(
    output reg [3:0] alu_op
    );
    
-
-
    always@( * ) begin
       case( opcode )
          4'd1 : { push, pop, alu_op } = 7'b10_0000;
          4'd2 : { push, pop, alu_op } = 7'b01_0000;
          4'd3 : { push, pop, alu_op } = 7'b00_0011;
+         4'd4 : { push, pop, alu_op } = 7'b00_0100;
+         4'd5 : { push, pop, alu_op } = 7'b00_0101;
+         4'd6 : { push, pop, alu_op } = 7'b00_0110;
+         4'd7 : { push, pop, alu_op } = 7'b00_0111;
+         4'd8 : { push, pop, alu_op } = 7'b00_1000;
          default : { push, pop, alu_op } = 7'b00_0000;
       endcase
    end

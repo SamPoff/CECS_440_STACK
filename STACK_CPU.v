@@ -21,7 +21,6 @@ module STACK_CPU(
    
    wire [3:0]  alu_op;
    wire [31:0] instruction_32;
-   //wire [7:0]  pc_out;
    wire [31:0] data_out_1st;
    wire [31:0] data_out_2nd;
    wire [31:0] result; 

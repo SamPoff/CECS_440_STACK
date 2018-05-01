@@ -62,6 +62,10 @@ module STACK(
             stack_pointer <= stack_pointer - 4'b1;
          end
       end
+      /************************************************
+      If the ALU has completed an operation it sends a 
+      pop instruction to the stack. 
+      ************************************************/
       else if( pop_alu ) begin
          stack_pointer <= stack_pointer - 4'b1;
          stack[ stack_pointer - 4'd2 ] <= result;

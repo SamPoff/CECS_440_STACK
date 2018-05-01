@@ -24,18 +24,7 @@
 // in student project work is subject to dismissal from  //
 // the class                                             //
 //*******************************************************//
-/**********************************************************
-16 bit instrucions. 
-PUSH = 32'h0000_0001
-POP  = 32'h0000_0002
-ADD  = 32'h0000_0003
-OR   = 32'h0000_0004
-ADD  = 32'h0000_0005
-SUB  = 32'h0000_0006
-SLT  = 32'h0000_0007
-NOR  = 32'h0000_0008
-IMM  = 32'hxxxx_xxxx
-**********************************************************/
+// Changed to 32 bit segments. 
 module INSTRUCTION_MEM_128x32(
    input  [7:0 ] ReadAddress, 
    output [31:0] Instruction
