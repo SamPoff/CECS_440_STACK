@@ -1,7 +1,0 @@
-verilog work "STACK.v"
-verilog work "INSTRUCTION_MEM_128x32.v"
-verilog work "CONTROL_UNIT.v"
-verilog work "ALU.v"
-verilog work "STACK_CPU.v"
-verilog work "STACK_CPU_tb.v"
-verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
